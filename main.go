@@ -1,7 +1,7 @@
 package main
 
-import "github.com/MCunanan/advent-of-code-2023/day1"
+import "github.com/MCunanan/advent-of-code-2023/day2"
 
 func main() {
-	day1.SolvePuzzle("./day1/input1.txt")
+	day2.SolvePuzzle("./day2/input.txt", 12, 13, 14)
 }

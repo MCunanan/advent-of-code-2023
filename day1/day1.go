@@ -7,6 +7,8 @@ import (
 	"regexp"
 	"strconv"
 	"strings"
+
+	"github.com/MCunanan/advent-of-code-2023/util"
 )
 
 var alphas = regexp.MustCompile(`[a-zA-Z]+`)
@@ -44,15 +46,9 @@ func cleanString(str string) string {
 	return alphas.ReplaceAllString(str, "")
 }
 
-func check(e error) {
-	if e != nil {
-		panic(e)
-	}
-}
-
 func SolvePuzzle(inputFile string) {
 	f, err := os.Open(inputFile)
-	check(err)
+	util.Check(err)
 	defer f.Close()
 
 	scanner := bufio.NewScanner(f)
@@ -68,7 +64,7 @@ func SolvePuzzle(inputFile string) {
 
 		// convert
 		i, err := strconv.Atoi(trimmedNumber)
-		check(err)
+		util.Check(err)
 		sum += i
 		fmt.Printf("%d: %s - %s - %s - %s - %d\n", iter, scanned, converted, strNumber, trimmedNumber, sum)
 	}
